@@ -8,6 +8,7 @@ dependencies:
   - pip
   - pip:
       - torch                  # vorher ggf. passende CUDA-Version wählen, siehe pytorch.org
+      - torchvision
       - transformers>=4.55     # GPT-OSS braucht eine aktuelle Version
       - accelerate             # für device_map='auto'
       - datasets               # lädt die Prompt-Datensätze von Hugging Face
