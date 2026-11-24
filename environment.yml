@@ -1,0 +1,20 @@
+# Selbst erstellt – das Original-environment.yml fehlt im GateBreaker-Artefakt.
+# Abgeleitet aus den Imports in src/*.py
+name: venv_gatebreaker
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - torch                  # vorher ggf. passende CUDA-Version wählen, siehe pytorch.org
+      - transformers>=4.55     # GPT-OSS braucht eine aktuelle Version
+      - accelerate             # für device_map='auto'
+      - datasets               # lädt die Prompt-Datensätze von Hugging Face
+      - scipy                  # zscore
+      - numpy
+      - tqdm
+      - pillow
+      - gputil
+      - qwen-vl-utils          # wird in util_model.py importiert (VLMs)
+      - kernels                # MXFP4-Kernels für GPT-OSS (optional, spart VRAM)
